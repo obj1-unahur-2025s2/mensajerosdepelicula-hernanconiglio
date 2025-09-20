@@ -3,15 +3,21 @@ import destinos.*
 
 object paquete {
     var destino = matrix
+    var estaPago = false
+
     method cambiarDestino(nuevoDestino) {
         destino = nuevoDestino
     }
-    var estaPago = false
+
     method estaPago() {
         return estaPago
     }
     method registrarPago() {
         estaPago = true
+    }
+
+    method cancelarPago() {
+        estaPago = false
     }
 
     method puedeSerEntregado(unMensajero) {

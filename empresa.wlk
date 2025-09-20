@@ -8,6 +8,9 @@ object empresa {
     const paquetesEnviados = []
     const paquetesPendientes = []
 
+    method paquetesEnviados() {return paquetesEnviados}
+    method paquetesPendientes() {return paquetesPendientes}
+
     method enviarPaquete(unPaquete) {
         if(self.algunMensajeroPuedeEntregar(unPaquete)) {
             paquetesEnviados.add(unPaquete)
@@ -20,7 +23,7 @@ object empresa {
         mensajeros.add(unMensajero)
     }
 
-    method mensajeros() = mensajeros
+    method mensajeros() {return mensajeros}
 
     method despedir(unMensajero) {
         mensajeros.remove(unMensajero)
