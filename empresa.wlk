@@ -3,6 +3,7 @@ import mensajeros.*
 import destinos.*
 
 object empresa {
+
     const mensajeros = []
     const paquetesEnviados = []
     const paquetesPendientes = []
@@ -14,7 +15,6 @@ object empresa {
         else {
             paquetesPendientes.add(unPaquete)
         }
-        
     }
     method contratar(unMensajero) {
         mensajeros.add(unMensajero)
@@ -69,10 +69,9 @@ object empresa {
     }
 
     method enviarPaquetePendienteMasCaro() {
-        if(self.algunMensajeroPuedeEntregar(self.paquetePendienteMasCaro())) {
-            self.enviarPaquete(self.paquetePendienteMasCaro())
-            paquetesPendientes.remove(self.paquetePendienteMasCaro())
-        }
+        const paqMasCaro = self.paquetePendienteMasCaro()
+        paquetesPendientes.remove(paqMasCaro)
+        self.enviarPaquete(paqMasCaro)
     }
 
     method paquetePendienteMasCaro() {
